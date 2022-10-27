@@ -23,7 +23,7 @@ public class AddServlet extends HttpServlet {
 		
 //		Cookies
 		
-		Cookie cookie = new Cookie("k", k + "");
+//		Cookie cookie = new Cookie("k", k + "");
 		
 //		res.addCo
 		
@@ -33,8 +33,8 @@ public class AddServlet extends HttpServlet {
 		
 		
 //		Passing values with session
-//		HttpSession session = req.getSession();
-//		session.setAttribute("k", k);
+		HttpSession session = req.getSession();
+		session.setAttribute("k", k);
 		
 		res.sendRedirect("square");
 		

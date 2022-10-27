@@ -14,7 +14,7 @@ public class SquareServlet extends HttpServlet {
 	public void doGet(HttpServletRequest req, HttpServletResponse res) throws IOException {
 //		Passing values with session
 //		HttpSession session = req.getSession();
-//		int k = (int) session.getAttribute("k");
+		int k = (int) session.getAttribute("k");
 		PrintWriter out = res.getWriter();
 		out.println(k + "^2 = " + k * k);
 	}
