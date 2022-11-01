@@ -94,7 +94,7 @@ function ValidateEmail(emailId)
 
 	<!-- We should have a servlet in order to process the form in
 		server side and proceed further -->
-	<form action="loginServlet" method="post" onclick="ValidateEmail(document.getElementById('emailId'))">
+	<form action="login" method="post" onsubmit="ValidateEmail(document.getElementById('emailId'))">
 		<div class="container">
 	<label for="username"><b>Email</b></label>
 	<input type="text" placeholder="Please enter your email" name="emailId" id = "emailId" required>

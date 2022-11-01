@@ -15,6 +15,9 @@ import javax.servlet.http.HttpSession;
 
 // User goes to 405GP/login.jsp and the action of the form on that page is 'loginServlet' which is mapped to this class in web.xml. So we receive a post request in this class with the credentials when the user submits the login.jsp form. We validate the credentials in this class, and we forward the request and response to either a welcome.jsp or forgotpassword.jsp file. 
 public class LoginServlet extends HttpServlet{
+	protected void doGet(HttpServletRequest req, HttpServletResponse res) throws IOException, ServletException {
+		req.getRequestDispatcher("views/login.jsp").forward(req, res);
+	}
 	protected void doPost(HttpServletRequest req, HttpServletResponse res) throws IOException, ServletException {
 		String emailId = req.getParameter("emailId");
         String password = req.getParameter("password");
@@ -35,7 +38,7 @@ public class LoginServlet extends HttpServlet{
         	
         	// Since we are using forwarding and not redirecting, I don't think we need to store the email in the session since it's an attribute of the request that's being forwarded and we can just use request.getParameter in welcome.jsp
         	
-        	req.getRequestDispatcher("welcome.jsp").forward(req, res);
+        	req.getRequestDispatcher("views/welcome.jsp").forward(req, res);
         	
         }
 	}
