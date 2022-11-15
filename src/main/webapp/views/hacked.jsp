@@ -4,10 +4,10 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Welcome</title>
+<title>You're in!</title>
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
-<link rel="stylesheet" href="styles.css">
+				integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+<link rel="stylesheet" href="<%=request.getContextPath()%>/styles.css">
 </head>
 <body>
 <nav class="navbar navbar-expand-lg navbar-dark text-white bg-secondary shadow pt-3 pb-3">
@@ -52,9 +52,9 @@
             </ul>
         </div>
     </nav>
-	<h1 class="display-4">Welcome <%=request.getParameter("emailId") %></h1>
-	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
-        crossorigin="anonymous"></script>
+	<h1 class="dislay-4 text-center mx-auto">You're in! Code: asdf123</h1>
+	<div class="container d-flex justify-content-center">
+	<img class="mx-auto" width="800" src="https://media.tenor.com/G465PtI9pbYAAAAM/critical-ops-we-do-a-little-trolling.gif">
+	</div>
 </body>
 </html>

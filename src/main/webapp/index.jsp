@@ -39,7 +39,14 @@
                     <a class="nav-link text-white" href="<%=request.getContextPath()%>/about">About</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link text-white" href="<%=request.getContextPath()%>/login">Login/Register</a>
+                    <a class="nav-link text-white" href="<%=request.getContextPath()%>/login">
+                    <% if(request.getSession().getAttribute("isLoggedIn") == null || request.getSession().getAttribute("emailId") == null){ %>
+                    Login/Register
+                    <%} else{ %>
+                    <%=("Welcome " + request.getSession().getAttribute("emailId")) %>
+                     <a class="d-inline" href="<%=request.getContextPath()%>/logout">(logout)</a>
+                    <%} %>
+                    </a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link text-white" href="<%=request.getContextPath()%>/cart">Shopping Cart</a>
