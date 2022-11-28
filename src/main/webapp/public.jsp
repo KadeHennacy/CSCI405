@@ -5,14 +5,14 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Knobs And Knockers</title>
+<title>About</title>
 </head>
 <body>
-
-	<h1>Knobs and Knockers</h1>
+	<h1>About</h1>
+	<p>This page is available to everyone including unauthenticated people</p>
 	<a href="login">Login</a><br>	
-	<a href="public.jsp">Public</a><br>	
 	<a href="secure.jsp">Secure</a><br>	
+	<a href="/405GP/">Home</a><br>
 	<c:if test="${sessionScope.username != null }">
 		<form action="logout">
 			<input type="submit" value="logout" />
