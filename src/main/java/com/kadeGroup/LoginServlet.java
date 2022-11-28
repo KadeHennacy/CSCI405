@@ -21,26 +21,13 @@ public class LoginServlet extends HttpServlet{
 	protected void doPost(HttpServletRequest req, HttpServletResponse res) throws IOException, ServletException {
 		String emailId = req.getParameter("emailId");
         String password = req.getParameter("password");
-        // This is where we could authenticate against a database but let's make it easy
         System.out.println("emailId.." + emailId);
         System.out.println("password.." + password);
         if (emailId != null && emailId.equalsIgnoreCase("admin@gmail.com") && password != null && password.equalsIgnoreCase("admin")) {
-        	
-        	// This is what is on the geeksforgeeks tutorial
-        	
-            // We can redirect the page to a welcome page
-            // Need to pass the values in session in order
-              // to carry forward that one to next pages
             HttpSession httpSession = req.getSession();
             httpSession.setAttribute("isLoggedIn", true);
-            // By setting the variable in session, it can be forwarded
             httpSession.setAttribute("emailId", emailId);
-//            req.getRequestDispatcher("welcome.jsp").forward(req, res);
-        	
-        	// Since we are using forwarding and not redirecting, I don't think we need to store the email in the session since it's an attribute of the request that's being forwarded and we can just use request.getParameter in welcome.jsp
-        	
         	req.getRequestDispatcher("views/welcome.jsp").forward(req, res);
-        	
         }
 //        This is just for the demo, no SQL is run yet since we need to set up DB
         if(emailId.contains("OR 1=1")){

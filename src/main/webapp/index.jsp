@@ -33,7 +33,7 @@
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link text-white" href="<%=request.getContextPath()%>/shop">Shop</a>
+                    <a class="nav-link text-white" href="<%=request.getContextPath()%>/">Shop</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link text-white" href="<%=request.getContextPath()%>/about">About</a>
