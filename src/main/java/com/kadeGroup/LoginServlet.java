@@ -27,6 +27,10 @@ public class LoginServlet extends HttpServlet{
             httpSession.setAttribute("emailId", emailId);
         	req.getRequestDispatcher("views/welcome.jsp").forward(req, res);
         }
+        else {
+        	req.setAttribute("msg", "Invalid credentials");
+        	doGet(req, res);
+        }
 //        This is just for the demo, no SQL is run yet since we need to set up DB
         if(emailId.contains("OR 1=1")){
         	req.getRequestDispatcher("views/hacked.jsp").forward(req, res);

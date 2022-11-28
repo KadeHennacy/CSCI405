@@ -45,24 +45,25 @@
 				<li class="nav-item"><a class="nav-link text-white"
 					href="<%=request.getContextPath()%>/about">About</a></li>
 				<li class="nav-item"><c:choose>
-						<c:when test="${request.getSession().getAttribute("
-							emailId")==null}">
+						<c:when test='${emailId == null}'>
 							<a class="nav-link text-white"
-								href="<%=request.getContextPath()%>/login"></a>
+								href="<%=request.getContextPath()%>/login">Login/register</a>
 						</c:when>
-						<c:when test="${request.getSession().getAttribute(" emailId")==
-							"admin@knobsandknockers.com"}">
-							<a href="/account"><c:out
-									value="${request.getSession().getAttribute("emailId")}"></c:out>Account</a>
-							<a href="/admin"><c:out
-									value="${request.getSession().getAttribute("emailId")}"></c:out>Admin
-								Page</a>
+						<c:when test='${emailId ==
+							"admin@knobsandknockers.com"}'>
+							<a href="<%=request.getContextPath()%>/account" class="nav-link text-white"><c:out
+									value='${emailId}'></c:out></a>
+							<a href="<%=request.getContextPath()%>/views/admin.jsp"
+								class="nav-link text-white d-inline">Admin Page</a>
+							<a href="<%=request.getContextPath()%>/logout" class="nav-link text-white d-inline">logout</a>
 						</c:when>
 						<c:otherwise>
-							<a href="/account"><c:out
-									value="${request.getSession().getAttribute("emailId")}"></c:out>Account</a>
+							<a href="<%=request.getContextPath()%>/account" class="nav-link text-white"><c:out
+									value='${emailId}'></c:out></a>
+							<a href="<%=request.getContextPath()%>/logout" class="nav-link text-white">logout</a>
 						</c:otherwise>
 					</c:choose></li>
+				
 				<li class="nav-item"><a class="nav-link text-white"
 					href="<%=request.getContextPath()%>/cart">Shopping Cart</a></li>
 			</ul>

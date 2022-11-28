@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -36,16 +38,26 @@
                 <li class="nav-item">
                     <a class="nav-link text-white" href="<%=request.getContextPath()%>/about">About</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link text-white" href="<%=request.getContextPath()%>/login">
-                    <% if(request.getSession().getAttribute("isLoggedIn") == null || request.getSession().getAttribute("emailId") == null){ %>
-                    Login/Register
-                    <%} else{ %>
-                    <%=("Welcome " + request.getSession().getAttribute("emailId")) %>
-                     <a class="d-inline" href="<%=request.getContextPath()%>/logout">(logout)</a>
-                    <%} %>
-                    </a>
-                </li>
+				<li class="nav-item"><c:choose>
+						<c:when test='${emailId == null}'>
+							<a class="nav-link text-white"
+								href="<%=request.getContextPath()%>/login">Login/register</a>
+						</c:when>
+						<c:when test='${emailId ==
+							"admin@knobsandknockers.com"}'>
+							<a href="<%=request.getContextPath()%>/account" class="nav-link text-white"><c:out
+									value='${emailId}'></c:out></a>
+							<a href="<%=request.getContextPath()%>/views/admin.jsp"
+								class="nav-link text-white d-inline">Admin Page</a>
+							<a href="<%=request.getContextPath()%>/logout" class="nav-link text-white d-inline">logout</a>
+						</c:when>
+						<c:otherwise>
+							<a href="<%=request.getContextPath()%>/account" class="nav-link text-white"><c:out
+									value='${emailId}'></c:out></a>
+							<a href="<%=request.getContextPath()%>/logout" class="nav-link text-white">logout</a>
+						</c:otherwise>
+					</c:choose></li>
+				
                 <li class="nav-item">
                     <a class="nav-link text-white" href="<%=request.getContextPath()%>/cart">Shopping Cart</a>
                 </li>

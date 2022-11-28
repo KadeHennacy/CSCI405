@@ -1,14 +1,15 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
-<title>You're in!</title>
+<title>Welcome</title>
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
-				integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
-<link rel="stylesheet" href="<%=request.getContextPath()%>/styles.css">
+        integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+<link rel="stylesheet" href="../styles.css">
 </head>
 <body>
 <nav class="navbar navbar-expand-lg navbar-dark text-white bg-secondary shadow pt-3 pb-3">
@@ -56,16 +57,15 @@
 							<a href="<%=request.getContextPath()%>/logout" class="nav-link text-white">logout</a>
 						</c:otherwise>
 					</c:choose></li>
-				
-                <li class="nav-item">
+				<li class="nav-item">
                     <a class="nav-link text-white" href="<%=request.getContextPath()%>/cart">Shopping Cart</a>
                 </li>
             </ul>
         </div>
     </nav>
-	<h1 class="dislay-4 text-center mx-auto">You're in! Code: asdf123</h1>
-	<div class="container d-flex justify-content-center">
-	<img class="mx-auto" width="800" src="https://media.tenor.com/G465PtI9pbYAAAAM/critical-ops-we-do-a-little-trolling.gif">
-	</div>
+	<h1 class="display-4">Secred admin page! Code: ADMIN420</h1>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
+        crossorigin="anonymous"></script>
 </body>
 </html>
