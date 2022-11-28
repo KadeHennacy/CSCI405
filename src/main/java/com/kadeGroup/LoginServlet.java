@@ -19,13 +19,11 @@ public class LoginServlet extends HttpServlet{
 		req.getRequestDispatcher("views/login.jsp").forward(req, res);
 	}
 	protected void doPost(HttpServletRequest req, HttpServletResponse res) throws IOException, ServletException {
+		LoginDao dao = new LoginDao();
 		String emailId = req.getParameter("emailId");
         String password = req.getParameter("password");
-        System.out.println("emailId.." + emailId);
-        System.out.println("password.." + password);
-        if (emailId != null && emailId.equalsIgnoreCase("admin@gmail.com") && password != null && password.equalsIgnoreCase("admin")) {
+        if(dao.checkCredentials(emailId, password)) {
             HttpSession httpSession = req.getSession();
-            httpSession.setAttribute("isLoggedIn", true);
             httpSession.setAttribute("emailId", emailId);
         	req.getRequestDispatcher("views/welcome.jsp").forward(req, res);
         }
