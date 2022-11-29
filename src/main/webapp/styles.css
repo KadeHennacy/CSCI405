@@ -1,0 +1,26 @@
+#logo{
+    font-family: Copperplate Gothic Light;
+    font-size: 30px;
+    font-weight: 500;
+}
+body {
+    background: url('https://img.freepik.com/free-vector/pastel-vector-dull-pastel-abstract-textured-background_53876-110546.jpg?w=2000') no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+  }
+.multiTruncate{
+    display: -webkit-box;
+    max-width: 200px;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+.priceWas{
+    text-decoration: line-through;
+}
+.productImg{
+    width: 254px;
+    height: 254px;
+}
