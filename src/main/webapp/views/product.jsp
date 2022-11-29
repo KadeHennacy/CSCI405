@@ -63,7 +63,26 @@
             </ul>
         </div>
     </nav>
-	<h1 class="display-4">Product Name: <c:out value="${productName}"></c:out></h1>
+	<div class="col d-flex justify-content-center m-4">
+				<div class="card px-5 py-3" style="width: 24rem;">
+					<strong class="text-danger mx-auto">Hot new item!</strong>
+					<div class="productImg mx-auto">
+						<img src="<c:url value="images/${param.image}"/>" class="card-img-top" alt="<c:url value="images/${param.image}"/>"/>
+					</div>
+					<div class="card-body mx-auto">
+						<h5 class="card-title multiTruncate">
+							<c:out value="${param.productName}"/>
+						</h5>
+						<p class="card-text mb-0">$<c:out value="${param.price}"/></p>
+						<p class="text-secondary priceWas mb-0">$<c:out value="${param.priceWas}"/></p>
+						<strong class="d-block">FREE SHIPPING</strong> <a class="d-block"
+							href="<%=request.getContextPath()%>#reviews">Reviews
+							(0)</a> <a href="#" class="btn btn-primary mt-2">Add to cart</a>
+					</div>
+				</div>
+			</div>
+	
+	
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
         crossorigin="anonymous"></script>
