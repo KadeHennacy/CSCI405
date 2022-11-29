@@ -80,8 +80,8 @@
 						<img src="images\crystalKnob.webp" class="card-img-top" alt="..."">
 					</div>
 					<div class="card-body mx-auto">
-						<h5 class="card-title multiTruncate">Baldwin Crystal Passage
-							Door Knob with Round Rose</h5>
+						<h5 class="card-title multiTruncate"><a href="<%=request.getContextPath()%>/product?productName=Baldwin">Baldwin Crystal Passage
+							Door Knob with Round Rose</a></h5>
 						<p class="card-text mb-0">$120.25</p>
 						<p class="text-secondary priceWas mb-0">$220</p>
 						<strong class="d-block">FREE SHIPPING</strong> <a class="d-block"

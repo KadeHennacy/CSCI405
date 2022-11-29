@@ -12,11 +12,10 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-
-@WebServlet("/login")
-public class LoginServlet extends HttpServlet{
+@WebServlet("/product")
+public class ProductServlet extends HttpServlet{
 	protected void doGet(HttpServletRequest req, HttpServletResponse res) throws IOException, ServletException {
-		req.getRequestDispatcher("views/login.jsp").forward(req, res);
+		req.getRequestDispatcher("views/product.jsp").forward(req, res);
 	}
 	protected void doPost(HttpServletRequest req, HttpServletResponse res) throws IOException, ServletException {
 		LoginDao dao = new LoginDao();
