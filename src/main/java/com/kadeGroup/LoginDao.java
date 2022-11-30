@@ -35,7 +35,8 @@ public class LoginDao {
 				+ "pass varchar(50) NOT NULL);"
 				+ "INSERT INTO account VALUES "
 				+ "('admin@knobsandknockers.com', 'admin'), "
-				+ "('customer@gmail.com', '123');";
+				+ "('rmv001@marietta.edu', 'vanCamp'), "
+				+ "('customer@gmail.com', '123')";
 				
 		try {
 			Class.forName("org.postgresql.Driver");

@@ -18,7 +18,16 @@ public class ReviewDao {
 				+ "	product_id SMALLINT NOT NULL,"
 				+ "	review_text TEXT NOT NULL,"
 				+ "	stars SMALLINT NOT NULL"
-				+ ")";
+				+ ");"
+				+ "INSERT INTO REVIEW (email_id, product_id, review_text, stars) VALUES "
+				+ "('customer@gmail.com', 1, 'Dropped it on the floor and it broke. Overpriced crap >:(', 1),"
+				+ "('rmv001@marietta.edu', 1, 'Pppfffffff PFfft THPPTPHTPHPHHP\r\n"
+				+ "Ppppffpppf. Pppppt\r\n"
+				+ "BRRRRAAAAAPPPFfFft!!!!!!!\r\n"
+				+ "', 4),"
+				+ "('customer@gmail.com', 2, 'Mushrooooommmmm :D', 5),"
+				+ "('customer@gmail.com', 3, 'Okay i guess :|', 3),"
+				+ "('customer@gmail.com', 4, 'Paint comes off easily :(', 2)";
 				
 		try {
 			Class.forName("org.postgresql.Driver");
