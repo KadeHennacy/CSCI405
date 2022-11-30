@@ -6,6 +6,8 @@
 <html>
 
 <head>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
 <meta charset="UTF-8">
 <title>Welcome</title>
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
@@ -159,64 +161,36 @@
 								<a class="btn btn-primary" href="<%=request.getContextPath()%>/login">Login/register</a>
 							</c:when>
 							<c:otherwise>
-								<form>
+								<!-- 								Directing the form to a blank iframe prevents page refresh -->
+								<iframe name="dummy" style="display: none;"></iframe>
+								<form action="/product" method="post" id="reviewForm" target="dummy" onSubmit="clearInputs()" id="reviewForm">
 									<div class="form-group mb-2">
 										<label for="reviewText" class="fw-bold mb-2">Leave a review</label>
-										<textarea class="form-control" id="reviewText" rows="3"></textarea>
+										<textarea name="reviewText" class="form-control" id="reviewText" rows="3" required></textarea>
 									</div>
-									<div class="form-group mb-5">
+									<div class="form-group mb-2">
 										<!--Code for star rating input is from https://stackoverflow.com/questions/8118266/integrating-css-star-rating-into-an-html-form -->
-										<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-										<script type="text/javascript">
-											$(document)
-													.ready(
-															function() {
-																// Check Radio-box
-																$(
-																		".rating input:radio")
-																		.attr(
-																				"checked",
-																				false);
-
-																$(
-																		'.rating input')
-																		.click(
-																				function() {
-																					$(
-																							".rating span")
-																							.removeClass(
-																									'checked');
-																					$(
-																							this)
-																							.parent()
-																							.addClass(
-																									'checked');
-																				});
-
-																$('input:radio')
-																		.change(
-																				function() {
-																					var userRating = this.value;
-																					alert(userRating);
-																				});
-															});
-										</script>
-
 										<div class="rating">
-											<span><input type="radio" name="rating" id="str5" value="5"><label
-												for="str5"
-											>☆</label></span> <span><input type="radio" name="rating" id="str4" value="4"><label
-												for="str4"
-											>☆</label></span> <span><input type="radio" name="rating" id="str3" value="3"><label
-												for="str3"
-											></label></span> <span><input type="radio" name="rating" id="str2" value="2"><label
-												for="str2"
-											></label></span> <span><input type="radio" name="rating" id="str1" value="1"><label
-												for="str1"
-											></label></span>
+											<input id="star5" name="star" type="radio" value="5" class="radio-btn hide" required />
+											<label for="star5">☆</label> <input id="star4" name="star" type="radio" value="4"
+												class="radio-btn hide" required
+											/> <label for="star4">☆</label> <input id="star3" name="star" type="radio" value="3"
+												class="radio-btn hide" required
+											/> <label for="star3">☆</label> <input id="star2" name="star" type="radio" value="2"
+												class="radio-btn hide" required
+											/> <label for="star2">☆</label> <input id="star1" name="star" type="radio" value="1"
+												class="radio-btn hide" required
+											/> <label for="star1">☆</label>
+											<div class="clear"></div>
+											<script>
+											
+											</script>
 										</div>
 									</div>
-									<button type="submit" class="btn btn-primary d-block mx-auto">Submit</button>
+<!-- 									add additional metadata to the request -->
+<input type="hidden" value="${emailId})" name="email_id" />
+<input type="hidden" value="${param.product_id}" name="product_id" />
+									<button type="submit" class="btn btn-primary d-block" onClick="checkStars()">Submit</button>
 								</form>
 							</c:otherwise>
 						</c:choose>
@@ -230,6 +204,7 @@
 		integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
 		crossorigin="anonymous"
 	></script>
+	<script src="script.js"></script>
 </body>
 
 </html>
