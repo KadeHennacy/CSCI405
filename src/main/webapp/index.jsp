@@ -84,13 +84,13 @@
 					<div class="card-body mx-auto">
 						<h5 class="card-title multiTruncate">
 							<a
-								href="<%=request.getContextPath()%>/product?productName=Baldwin%20Crystal%20Passage%20Door%20Knob%20with%20Round%20Rose&price=120.25&priceWas=220&image=crystalKnob.webp">Baldwin
+								href="<%=request.getContextPath()%>/product?product_id=1&productName=Baldwin%20Crystal%20Passage%20Door%20Knob%20with%20Round%20Rose&price=120.25&priceWas=220&image=crystalKnob.webp">Baldwin
 								Crystal Passage Door Knob with Round Rose</a>
 						</h5>
 						<p class="card-text mb-0">$120.25</p>
 						<p class="text-secondary priceWas mb-0">$220</p>
 						<strong class="d-block">FREE SHIPPING</strong> <a class="d-block"
-							href="<%=request.getContextPath()%>/product?productName=Baldwin%20Crystal%20Passage%20Door%20Knob%20with%20Round%20Rose&price=120.25&priceWas=220&image=crystalKnob.webp#reviews">Reviews
+							href="<%=request.getContextPath()%>/product?product_id=1&productName=Baldwin%20Crystal%20Passage%20Door%20Knob%20with%20Round%20Rose&price=120.25&priceWas=220&image=crystalKnob.webp#reviews">Reviews
 							(0)</a> <a href="#" class="btn btn-primary mt-2">Add to cart</a>
 					</div>
 				</div>
@@ -105,13 +105,13 @@
 					<div class="card-body mx-auto">
 						<h5 class="card-title multiTruncate">
 							<a
-								href="<%=request.getContextPath()%>/product?productName=Omnia%20Mushroom%20Knob%20Copper&price=25&priceWas=39.25&image=mushroomKnob.webp">Omnia
+								href="<%=request.getContextPath()%>/product?product_id=2&productName=Omnia%20Mushroom%20Knob%20Copper&price=25&priceWas=39.25&image=mushroomKnob.webp">Omnia
 								Mushroom Knob Copper</a>
 						</h5>
 						<p class="card-text mb-0">$25</p>
 						<p class="text-secondary priceWas mb-0">$39.25</p>
 						<strong class="d-block">FREE SHIPPING</strong> <a class="d-block"
-							href="<%=request.getContextPath()%>/product?productName=Omnia%20Mushroom%20Knob%20Copper&price=25&priceWas=39.25&image=mushroomKnob.webp#reviews">Reviews
+							href="<%=request.getContextPath()%>/product?product_id=2&productName=Omnia%20Mushroom%20Knob%20Copper&price=25&priceWas=39.25&image=mushroomKnob.webp#reviews">Reviews
 							(0)</a> <a href="#" class="btn btn-primary mt-2">Add to cart</a>
 					</div>
 				</div>
@@ -124,12 +124,12 @@
 					</div>
 					<div class="card-body mx-auto">
 						<a
-							href="<%=request.getContextPath()%>/product?price=39.00&priceWas=60.00&image=silverKnob.jpg&productName=Beax%20Arts%20Door%20Knob"><h5
+							href="<%=request.getContextPath()%>/product?product_id=3&price=39.00&priceWas=60.00&image=silverKnob.jpg&productName=Beax%20Arts%20Door%20Knob"><h5
 								class="card-title multiTruncate">Beax Arts Door Knob</h5></a>
 						<p class="card-text mb-0">$39.00</p>
 						<p class="text-secondary priceWas mb-0">$60.00</p>
 						<strong class="d-block">FREE SHIPPING</strong> <a class="d-block"
-							href="<%=request.getContextPath()%>/product?price=39.00&priceWas=60.00&image=silverKnob.jpg&productName=Beax%20Arts%20Door%20Knob#reviews">Reviews
+							href="<%=request.getContextPath()%>/product?product_id=3&price=39.00&priceWas=60.00&image=silverKnob.jpg&productName=Beax%20Arts%20Door%20Knob#reviews">Reviews
 							(0)</a> <a href="#" class="btn btn-primary mt-2">Add to cart</a>
 					</div>
 				</div>
@@ -142,21 +142,18 @@
 					</div>
 					<div class="card-body mx-auto">
 						<a
-							href="<%=request.getContextPath()%>/product?price=27.97&priceWas=55&image=mattKnob.webp&productName=Andover%20Passage%20Door%20Knob%20Set"><h5
+							href="<%=request.getContextPath()%>/product?product_id=4&price=27.97&priceWas=55&image=mattKnob.webp&productName=Andover%20Passage%20Door%20Knob%20Set"><h5
 								class="card-title multiTruncate">Andover Passage Door Knob
 								Set</h5></a>
 						<p class="card-text mb-0">$27.97</p>
 						<p class="text-secondary priceWas mb-0">$55.00</p>
 						<strong class="d-block">FREE SHIPPING</strong> <a class="d-block"
-							href="<%=request.getContextPath()%>/product?price=27.97&priceWas=55&image=mattKnob.webp&productName=Andover%20Passage%20Door%20Knob%20Set#reviews">Reviews
+							href="<%=request.getContextPath()%>/product?product_id=4&price=27.97&priceWas=55&image=mattKnob.webp&productName=Andover%20Passage%20Door%20Knob%20Set#reviews">Reviews
 							(0)</a> <a href="#" class="btn btn-primary mt-2">Add to cart</a>
 					</div>
 				</div>
 			</div>
 		</div>
-		<!-- <div class="row">
-            <h1 class="display-4 my-4 text-center">Bestselling Knockers</h1>
-        </div> -->
 	</div>
 
 	<script

@@ -31,11 +31,12 @@ public class LoginDao {
 	}
 	public void createAccountTable() {
 		String sql="CREATE TABLE account ("
-				+ "email_id varchar(50),"
-				+ "pass varchar(50));"
+				+ "email_id varchar(50) NOT NULL PRIMARY KEY,"
+				+ "pass varchar(50) NOT NULL);"
 				+ "INSERT INTO account VALUES "
 				+ "('admin@knobsandknockers.com', 'admin'), "
-				+ "('customer@gmail.com', '123');";
+				+ "('rmv001@marietta.edu', 'vanCamp'), "
+				+ "('customer@gmail.com', '123')";
 				
 		try {
 			Class.forName("org.postgresql.Driver");
