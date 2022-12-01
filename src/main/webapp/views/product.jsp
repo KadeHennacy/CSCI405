@@ -120,6 +120,9 @@
 						<div class="d-flex flex-start">
 							<div>
 								<h6 class="fw-bold mb-1">${rs.rows[0].email_id}</h6>
+								<c:forEach begin="1" end="${rs.rows[0].stars}" var="val">
+									<c:out value="☆" />
+								</c:forEach>
 								<div class="d-flex align-items-center mb-3">
 									<a href="#!" class="link-muted"><i class="fas fa-pencil-alt ms-2"></i></a> <a href="#!"
 										class="link-muted"
@@ -145,6 +148,9 @@
 									<div class="d-flex flex-start">
 										<div>
 											<h6 class="fw-bold mb-1">${row.email_id}</h6>
+											<c:forEach begin="1" end="${row.stars}" var="val">
+												<c:out value="☆" />
+											</c:forEach>
 											<div class="d-flex align-items-center mb-3"></div>
 											<p class="mb-0">${row.review_text}</p>
 										</div>
@@ -163,10 +169,14 @@
 							<c:otherwise>
 								<!-- 								Directing the form to a blank iframe prevents page refresh -->
 								<iframe name="dummy" style="display: none;"></iframe>
-								<form action="/product" method="post" id="reviewForm" target="dummy" onSubmit="clearInputs()" id="reviewForm">
+								<form action="/product?<%=request.getQueryString()%>" method="post" id="reviewForm"
+									id="reviewForm"
+								>
 									<div class="form-group mb-2">
 										<label for="reviewText" class="fw-bold mb-2">Leave a review</label>
-										<textarea name="reviewText" class="form-control" id="reviewText" rows="3" required></textarea>
+										<textarea name="reviewText" form="reviewForm" class="form-control" id="reviewText"
+											rows="3" required
+										></textarea>
 									</div>
 									<div class="form-group mb-2">
 										<!--Code for star rating input is from https://stackoverflow.com/questions/8118266/integrating-css-star-rating-into-an-html-form -->
@@ -183,14 +193,17 @@
 											/> <label for="star1">☆</label>
 											<div class="clear"></div>
 											<script>
-											
+												
 											</script>
 										</div>
 									</div>
-<!-- 									add additional metadata to the request -->
-<input type="hidden" value="${emailId})" name="email_id" />
-<input type="hidden" value="${param.product_id}" name="product_id" />
-									<button type="submit" class="btn btn-primary d-block" onClick="checkStars()">Submit</button>
+									<!-- 									add additional metadata to the request -->
+									<input type="hidden" value="${emailId}" name="email_id" /> <input type="hidden"
+										value="${param.product_id}" name="product_id"
+									/>
+									<button type="submit" id="submitReview" class="btn btn-primary d-block"
+										onclick="return checkStars()"
+									>Submit</button>
 								</form>
 							</c:otherwise>
 						</c:choose>

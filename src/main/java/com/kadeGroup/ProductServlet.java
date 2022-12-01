@@ -4,6 +4,8 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.Date;
 import java.util.Enumeration;
+import java.util.Map;
+import java.util.stream.Collectors;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebInitParam;
@@ -19,13 +21,12 @@ public class ProductServlet extends HttpServlet{
 		req.getRequestDispatcher("views/product.jsp").forward(req, res);
 	}
 	protected void doPost(HttpServletRequest req, HttpServletResponse res) throws IOException, ServletException {
-		
 		String emailId = req.getParameter("email_id");
-		String productId = req.getParameter("product_id");
+		int productId = Integer.parseInt(req.getParameter("product_id"));
 		String reviewText = req.getParameter("reviewText");
-		String stars = req.getParameter("star");
-		// TODO put these into the database
-		System.out.println(emailId + "    " + productId + "   " + reviewText + "   " + stars);
-		
+		int stars = Integer.parseInt(req.getParameter("star"));
+		ReviewDao dao = new ReviewDao();
+		dao.submitReview(emailId, productId, reviewText, stars);
+		doGet(req, res);
 	}
 }
