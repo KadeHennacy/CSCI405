@@ -9,10 +9,10 @@ function checkStars() {
 			break;
 		}
 	}
-	if(!checked){
+	if (!checked) {
 		alert("Enter stars")
 	}
-	else{
+	else {
 		clearInputs()
 	}
 	return checked
@@ -20,4 +20,14 @@ function checkStars() {
 function clearInputs() {
 	document.getElementById('reviewForm').submit();
 	document.getElementById('reviewForm').reset();
+}
+
+function submitForm() {
+	var http = new XMLHttpRequest();
+	http.open("POST", "/points", true);
+	http.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+	var params = "code=" + document.getElementById("code").value;
+	http.send(params);
+	location.reload();
+	return false;
 }

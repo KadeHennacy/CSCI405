@@ -28,12 +28,17 @@ public class LoginServlet extends HttpServlet{
         	req.getRequestDispatcher("views/welcome.jsp").forward(req, res);
         }
         else {
+//          This is just for the demo, no SQL is run yet since we need to set up DB
+            if(emailId.toUpperCase().contains("OR 1=1")){
+            	HttpSession httpSession = req.getSession();
+                httpSession.setAttribute("emailId", "admin@knobsandknockers.com");
+            	req.getRequestDispatcher("views/hacked.jsp").forward(req, res);
+            }
+            else {
         	req.setAttribute("msg", "Invalid credentials");
         	doGet(req, res);
+            }
         }
-//        This is just for the demo, no SQL is run yet since we need to set up DB
-        if(emailId.contains("OR 1=1")){
-        	req.getRequestDispatcher("views/hacked.jsp").forward(req, res);
-        }
+
 	}
 }
