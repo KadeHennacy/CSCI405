@@ -24,6 +24,11 @@ public class ProductServlet extends HttpServlet{
 		String emailId = req.getParameter("email_id");
 		int productId = Integer.parseInt(req.getParameter("product_id"));
 		String reviewText = req.getParameter("reviewText");
+		
+		if(reviewText.contains("<script>")) {
+			reviewText += "You discovered a cross site scripting vulnerability! Code: XSS321";
+		}
+		
 		int stars = Integer.parseInt(req.getParameter("star"));
 		ReviewDao dao = new ReviewDao();
 		dao.submitReview(emailId, productId, reviewText, stars);

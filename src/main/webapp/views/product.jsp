@@ -34,19 +34,27 @@
 			<div class="mx-auto"></div>
 			<ul class="navbar-nav">
 				<li class="nav-item">
-					<form class="d-flex me-3" role="search">
-						<input class="form-control me-2" type="search" placeholder="Search Products"
-							aria-label="Search"
+					<form class="d-flex me-3" role="search" action="/points" method="post"
+						onsubmit="return submitForm()"
+					>
+						<c:if test="${codeInvalid != null}">
+							<c:out value="${codeInvalid}" />
+						</c:if>
+						<c:if test='${points != null}'>
+							<c:if test="${points > 0}">
+								Points = <c:out value="${points}" />
+							</c:if>
+						</c:if>
+						<input class="form-control me-2" type="text" placeholder="Enter Code"
+							aria-label="Search" name="code" id="code"
 						>
 						<button class="btn btn-success" type="submit">Search</button>
 					</form>
 				</li>
 
+				<li class="nav-item"><a class="nav-link text-white" href="<%=request.getContextPath()%>/">Shop</a></li>
 				<li class="nav-item"><a class="nav-link text-white"
-					href="<%=request.getContextPath()%>/shop"
-				>Shop</a></li>
-				<li class="nav-item"><a class="nav-link text-white"
-					href="<%=request.getContextPath()%>/about"
+					href="<%=request.getContextPath()%>#"
 				>About</a></li>
 				<li class="nav-item"><c:choose>
 						<c:when test='${emailId == null}'>
@@ -54,22 +62,21 @@
 						</c:when>
 						<c:when test='${emailId ==
 							"admin@knobsandknockers.com"}'>
-							<a href="<%=request.getContextPath()%>/account" class="nav-link text-white"> <c:out
+							<a href="<%=request.getContextPath()%>#" class="nav-link text-white"><c:out
 									value='${emailId}'
-								></c:out>
-							</a>
+								></c:out></a>
 							<a href="<%=request.getContextPath()%>/views/admin.jsp" class="nav-link text-white d-inline">Admin
 								Page</a>
 							<a href="<%=request.getContextPath()%>/logout" class="nav-link text-white d-inline">logout</a>
 						</c:when>
 						<c:otherwise>
-							<a href="<%=request.getContextPath()%>/account" class="nav-link text-white"> <c:out
+							<a href="<%=request.getContextPath()%>#" class="nav-link text-white"><c:out
 									value='${emailId}'
-								></c:out>
-							</a>
+								></c:out></a>
 							<a href="<%=request.getContextPath()%>/logout" class="nav-link text-white">logout</a>
 						</c:otherwise>
 					</c:choose></li>
+
 				<li class="nav-item"><a class="nav-link text-white"
 					href="<%=request.getContextPath()%>/cart"
 				>Shopping Cart</a></li>
