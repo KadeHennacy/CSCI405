@@ -50,7 +50,7 @@
 
 				<li class="nav-item"><a class="nav-link text-white" href="<%=request.getContextPath()%>/">Shop</a></li>
 				<li class="nav-item"><a class="nav-link text-white"
-					href="<%=request.getContextPath()%>/about"
+					href="<%=request.getContextPath()%>#"
 				>About</a></li>
 				<li class="nav-item"><c:choose>
 						<c:when test='${emailId == null}'>
@@ -58,7 +58,7 @@
 						</c:when>
 						<c:when test='${emailId ==
 							"admin@knobsandknockers.com"}'>
-							<a href="<%=request.getContextPath()%>/account" class="nav-link text-white"><c:out
+							<a href="<%=request.getContextPath()%>#" class="nav-link text-white"><c:out
 									value='${emailId}'
 								></c:out></a>
 							<a href="<%=request.getContextPath()%>/views/admin.jsp" class="nav-link text-white d-inline">Admin
@@ -66,7 +66,7 @@
 							<a href="<%=request.getContextPath()%>/logout" class="nav-link text-white d-inline">logout</a>
 						</c:when>
 						<c:otherwise>
-							<a href="<%=request.getContextPath()%>/account" class="nav-link text-white"><c:out
+							<a href="<%=request.getContextPath()%>#" class="nav-link text-white"><c:out
 									value='${emailId}'
 								></c:out></a>
 							<a href="<%=request.getContextPath()%>/logout" class="nav-link text-white">logout</a>
@@ -99,7 +99,7 @@
 						<p class="text-secondary priceWas mb-0">$220</p>
 						<strong class="d-block">FREE SHIPPING</strong> <a class="d-block"
 							href="<%=request.getContextPath()%>/product?product_id=1&productName=Baldwin%20Crystal%20Passage%20Door%20Knob%20with%20Round%20Rose&price=120.25&priceWas=220&image=crystalKnob.webp#reviews"
-						>Reviews (0)</a> <a href="#" class="btn btn-primary mt-2">Add to cart</a>
+						>Reviews (0)</a> <a href="/cart" class="btn btn-primary mt-2">Add to cart</a>
 					</div>
 				</div>
 			</div>
@@ -120,7 +120,7 @@
 						<p class="text-secondary priceWas mb-0">$39.25</p>
 						<strong class="d-block">FREE SHIPPING</strong> <a class="d-block"
 							href="<%=request.getContextPath()%>/product?product_id=2&productName=Omnia%20Mushroom%20Knob%20Copper&price=25&priceWas=39.25&image=mushroomKnob.webp#reviews"
-						>Reviews (0)</a> <a href="#" class="btn btn-primary mt-2">Add to cart</a>
+						>Reviews (0)</a> <a href="/cart" class="btn btn-primary mt-2">Add to cart</a>
 					</div>
 				</div>
 			</div>
@@ -138,7 +138,7 @@
 						<p class="text-secondary priceWas mb-0">$60.00</p>
 						<strong class="d-block">FREE SHIPPING</strong> <a class="d-block"
 							href="<%=request.getContextPath()%>/product?product_id=3&price=39.00&priceWas=60.00&image=silverKnob.jpg&productName=Beax%20Arts%20Door%20Knob#reviews"
-						>Reviews (0)</a> <a href="#" class="btn btn-primary mt-2">Add to cart</a>
+						>Reviews (0)</a> <a href="/cart" class="btn btn-primary mt-2">Add to cart</a>
 					</div>
 				</div>
 			</div>
@@ -156,7 +156,7 @@
 						<p class="text-secondary priceWas mb-0">$55.00</p>
 						<strong class="d-block">FREE SHIPPING</strong> <a class="d-block"
 							href="<%=request.getContextPath()%>/product?product_id=4&price=27.97&priceWas=55&image=mattKnob.webp&productName=Andover%20Passage%20Door%20Knob%20Set#reviews"
-						>Reviews (0)</a> <a href="#" class="btn btn-primary mt-2">Add to cart</a>
+						>Reviews (0)</a> <a href="/cart" class="btn btn-primary mt-2">Add to cart</a>
 					</div>
 				</div>
 			</div>

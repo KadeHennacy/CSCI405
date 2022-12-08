@@ -15,27 +15,38 @@ import javax.servlet.http.HttpSession;
 
 @WebServlet("/points")
 public class PointServlet extends HttpServlet {
-	String validCodes = "asdf123" + "admin420";
 	protected void doGet(HttpServletRequest req, HttpServletResponse res) throws IOException, ServletException {
 		res.sendRedirect("index.jsp");
 	}
 
 	protected void doPost(HttpServletRequest req, HttpServletResponse res) throws IOException, ServletException {
-		
-		
 		HttpSession httpSession = req.getSession();
+		if(httpSession.getAttribute("codes") == null) {
+			httpSession.setAttribute("codes", "asdf123" + "admin99" + "ErrorVulnerability" + "XSS321");
+		}
+		if(httpSession.getAttribute("usedCodes") == null) {
+			httpSession.setAttribute("usedCodes", "");
+		}
 		httpSession.setAttribute("codeInvalid", "");
 		if(httpSession.getAttribute("points") == null) {
 			httpSession.setAttribute("points", 0);
 		}
 		String code = req.getParameter("code");
+		String validCodes = (String) httpSession.getAttribute("codes");
+		String usedCodes = (String) httpSession.getAttribute("usedCodes");
 		if (code != null) {
 			int currentPoints = (Integer) httpSession.getAttribute("points");
 			int points = 0;
 			if(validCodes.contains(code)) {
-				validCodes.replace(code, "");
+				validCodes = validCodes.replace(code, "");
+				httpSession.setAttribute("codes", validCodes);
+				usedCodes += code;
+				httpSession.setAttribute("usedCodes", usedCodes);
 				points = 10;
-			} else {
+			} else if(usedCodes.contains(code)){
+				httpSession.setAttribute("codeInvalid", "Code already used");
+			}
+			else {
 				httpSession.setAttribute("codeInvalid", "Invalid code");
 			}
 			httpSession.setAttribute("points", currentPoints + points);
