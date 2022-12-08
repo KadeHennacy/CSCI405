@@ -51,6 +51,5 @@ public class PointServlet extends HttpServlet {
 			}
 			httpSession.setAttribute("points", currentPoints + points);
 		}
-		System.out.println((Integer) httpSession.getAttribute("code"));
 	}
 }

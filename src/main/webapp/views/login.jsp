@@ -89,8 +89,7 @@
 
 	<!-- We should have a servlet in order to process the form in
 				server side and proceed further -->
-	<form action="login" method="post"
-		onsubmit="ValidateEmail(document.getElementById('emailId'))">
+	<form action="login" method="post">
 		<div class="container bg-light my-4 p-4 rounded">
 			<label class="form-label" for="username"><b>Email</b></label> <input
 				class="form-control" type="text"
